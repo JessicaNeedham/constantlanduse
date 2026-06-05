@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 from scipy.optimize import curve_fit
-from datetime import UTC, date, datetime
+from datetime import  date, datetime
 
 def piecewise_exponential_cumulative(ages, k1, k2, m=94):
     ### this function calculates a piecewise exponential function, whose integral equals one
@@ -75,8 +75,8 @@ age_mature=94
 year_luh2_start = 850
 
 # this is the year that you want to calculate a steady-state logging rate for
-#year_to_calc_steadystate = 2000
-year_to_calc_steadystate = 1850
+year_to_calc_steadystate = 2000
+#year_to_calc_steadystate = 1850
 
 
 print(fin_luh2.dims)
@@ -273,5 +273,7 @@ encoding = {var: {'_FillValue': -999.0} for var in fout.data_vars}
 #fout.to_netcdf('LUH2_states_transitions_management.timeseries_4x5_hist_steadystate_'+str(year_to_calc_steadystate)+'_'+str(date.today())+'.nc')
 #fout.to_netcdf('LUH2_states_transitions_management.timeseries_ne30_hist_steadystate_'+str(year_to_calc_steadystate)+'_'+str(date.today())+'.nc')
 #fout.to_netcdf('LUH3_states_transitions_management.timeseries_ne16_hist_steadystate_'+str(year_to_calc_steadystate)+'_'+str(date.today())+'.nc')
-fout.to_netcdf('LUH3_'+str(year_to_calc_steadystate)+'_steadystate_ne16np4_c'+datetime.now(UTC).strftime('%y%m%d')+'.nc', encoding=encoding)
+#fout.to_netcdf('LUH3_'+str(year_to_calc_steadystate)+'_steadystate_ne16np4_c'+datetime.now(UTC).strftime('%y%m%d')+'.nc', encoding=encoding)
+fout.to_netcdf('/div/no-backup-nac/users/jessica/LUH3_'+str(year_to_calc_steadystate)+'_steadystate_ne16_c.nc', encoding=encoding)
+
 
