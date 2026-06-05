@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-from datetime import UTC, datetime
+from datetime import date
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -499,7 +499,7 @@ def run_workflow(
 def output_filename(year_to_calc_steadystate):
     return (
         f"LUH3_{year_to_calc_steadystate}_steadystate_ne16np4_c"
-        f"{datetime.now(UTC).strftime('%y%m%d')}.nc"
+        f"{date.today()}.nc"
     )
 
 
